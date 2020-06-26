@@ -95,7 +95,7 @@ export const UserABM = ({match}) => {
     } else {
       setUser({})
     }
-  }, [match])
+  }, [match, isNew])
 
   const updateValues = (e) => {
     let u = user;

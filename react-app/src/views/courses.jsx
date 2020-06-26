@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Table, Spinner, Button, Form, Alert, Tab, Tabs } from 'react-bootstrap';
+import { Container, Row, Col, Table, Spinner, Button, Form, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Layout } from './layout';
 
@@ -83,7 +83,6 @@ export const CoursesList = () => {
 export const CoursesABM = ({match}) => {
 
   const [course, setCourse] = React.useState(undefined);
-  const [lesson, setLesson] = React.useState(undefined);
   const [categories, setCategories] = React.useState(undefined);
   const [status, setStatus] = React.useState("");
 
@@ -102,7 +101,7 @@ export const CoursesABM = ({match}) => {
     } else {
       setCourse({})
     }
-  }, [match])
+  }, [match, isNew])
 
   const updateValues = (e) => {
     let u = course;
@@ -144,14 +143,6 @@ export const CoursesABM = ({match}) => {
         }
       })
     }
-  }
-
-  const addLesson = (e) => {
-
-  }
-
-  const deleteLesson = (id) => {
-
   }
 
   return (

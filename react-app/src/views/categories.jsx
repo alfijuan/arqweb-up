@@ -88,10 +88,13 @@ export const CategoriesABM = ({match}) => {
       .then(response => {
         setCategory(response.data.category)
       })
+      .catch(response => {
+        console.log('error here')
+      })
     } else {
       setCategory({})
     }
-  }, [match])
+  }, [match, isNew])
 
   const updateValues = (e) => {
     let u = category;

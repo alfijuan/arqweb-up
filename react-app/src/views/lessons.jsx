@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Table, Spinner, Button, Form, Alert, Tab, Tabs } from 'react-bootstrap';
+import { Container, Row, Col, Table, Spinner, Button, Form, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Layout } from './layout';
 
@@ -104,7 +104,7 @@ export const LessonsABM = ({match}) => {
     } else {
       setLesson({})
     }
-  }, [match])
+  }, [match, isNew])
 
   const updateValues = (e) => {
     let u = lesson;

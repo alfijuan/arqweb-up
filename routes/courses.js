@@ -74,19 +74,19 @@ router.post('/:id/lessons', async (req, res) => {
   }
 });
 
-router.delete('/:id/lessons/:lessonId', async (req, res) => {
-  try {
-    const { id, lessonId } = req.params;
-    Lesson.findByIdAndDelete(lessonId, (err) => {
-      if(err) res.json(error);
-      console.log('HEREEE NO ERROR')
+// router.delete('/:id/lessons/:lessonId', async (req, res) => {
+//   try {
+//     const { id, lessonId } = req.params;
+//     Lesson.findByIdAndDelete(lessonId, (err) => {
+//       if(err) res.json(error);
+//       console.log('HEREEE NO ERROR')
 
-      await Course.findByIdAndUpdate(id, { $pull: { lessons: lessonId } });
-      res.json({ delete: true })
-    });
-  } catch (error) {
-    res.json(error);
-  }
-});
+//       await Course.findByIdAndUpdate(id, { $pull: { lessons: lessonId } });
+//       res.json({ delete: true })
+//     });
+//   } catch (error) {
+//     res.json(error);
+//   }
+// });
 
 module.exports = router;
